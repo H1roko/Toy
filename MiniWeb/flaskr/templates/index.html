@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/index.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <title>搜索</title>
+</head>
+
+<body>
+    <div class="layout">
+        <div class="header">
+            <img class="logo" src="../static/images/logo.png" alt="Para MiniWeb">
+            <form class="search" method="post" action="/search">
+                <input autocomplete="off" type="text" class="searchTerm" name="content" placeholder="{{content}}">
+                <button  type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+            </form>
+        </div>
+        <div class="main">
+            <div class="wrapper">
+                {% if content == "你想找什么？" %}
+                    <span class="nav">最新文章</span>
+                    {% elif passages|length != 0 %}
+                    <span class="nav">搜索结果</span>
+                        {% else %}
+                        <span class="nav">暂无结果</span>
+                {% endif %}
+                {% if passages|length != 0 %}
+                    <div class="line"></div>
+                    {% endif %}
+                {% for passage in passages %}
+                <a class="passage" href="{{ url_for('detail', id=passage['id']) }}" target="_blank">
+                    <div class="left">
+                        <h1>{{passage['title']}}</h1>
+                        <h3>{{passage['name']}}</h3>
+                    </div>
+                    <div class="right">
+                        <p class="body">{{passage['body']}}</p>
+                    </div>
+                </a>
+                {% if not loop.last %}
+                <div class="line"></div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    padding: 4em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #3E54A5, #5600AC);
+}
+
+.logo {
+    height: 4em;
+    width: 10em;
+    margin-top: 4em;
+    margin-bottom: 2em;
+}
+
+.search {
+    width: 30%;
+    position: relative;
+    display: flex;
+}
+
+.searchTerm {
+    font-size: large;
+    font-weight: lighter;
+    width: 100%;
+    border: 4px solid #FFF;
+    border-right: none;
+    padding: 5px;
+    height: 30px;
+    border-radius: 16px 0 0 16px;
+    outline: none;
+    color: #FFF;
+}
+
+.searchTerm:focus {
+    color: #5438B6;
+    box-shadow: 15px 20px 30px rgba(200, 200, 200, 0.6);
+}
+
+.searchButton {
+    width: 40px;
+    height: 48px;
+    border: 1px solid #FFF;
+    background: #FFF;
+    text-align: center;
+    color: #5438B6;
+    border-radius: 0 16px 16px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.main {
+    margin: 1em;
+    display: flex;
+    justify-content: center;
+    color: rgb(100, 100, 100);
+}
+
+.wrapper,
+.sideBar {
+    padding: 0.5em;
+    margin: 0 0.5em;
+    border-radius: 1em;
+    box-shadow: 10px 20px 30px rgba(200, 200, 200, 0.6);
+}
+
+.wrapper {
+    width: 50em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(200, 200, 200, 0.6);
+}
+
+.wrapper a {
+    text-decoration: none;
+}
+
+.wrapper a:link {
+    color: rgb(100, 100, 100);
+}
+
+.wrapper a:hover {
+    color: rgb(60, 60, 60);
+}
+
+.wrapper a:visited {
+    color: rgb(40, 40, 40);
+}
+
+.wrapper a:active {
+    color: rgb(0, 0, 0);
+}
+
+.line {
+    margin: 0.5em;
+    width: 96%;
+    height: 1px;
+    background-color: rgba(200, 200, 200, 0.6);
+}
+
+.passage {
+    width: 48em;
+    display: block;
+    display: flex;
+    overflow: hidden;
+}
+
+.left {
+    width: 25%;
+    flex-grow: 1;
+    margin-right: 1em;
+}
+
+.left h1 {
+    font-size: 1.5em;
+}
+
+.right {
+    width: 75%;
+    flex-grow: 2;
+}
+
+.right p {
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sideBar {
+    width: 16em;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(200, 200, 200, 0.6);
+}

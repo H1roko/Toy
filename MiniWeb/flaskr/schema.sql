@@ -1,0 +1,21 @@
+-- 初始化数据库
+-- 清空已存在的数据并创建空表
+
+-- DROP TABLE IF EXISTS author;
+-- DROP TABLE IF EXISTS passage;
+
+-- 文章作者
+CREATE TABLE author (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT UNIQUE NOT NULL
+);
+
+-- 文章本体
+CREATE TABLE passage (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT NOT NULL,
+  body TEXT NOT NULL,
+  author_id INTEGER NOT NULL,
+  -- created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (author_id) REFERENCES author (id)
+);

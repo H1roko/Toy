@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/detail.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <title>文章详情</title>
+</head>
+
+<body>
+    <div class="layout">
+        <div class="header">
+            <a href="{{ url_for('index') }}"><img class="logo" src="../static/images/logo.png" alt="Para MiniWeb"></a>
+            <form class="search" method="post" action="/search">
+                <input autocomplete="off" type="text" class="searchTerm" name="content" placeholder="你想找什么？">
+                <button  type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+            </form>
+        </div>
+        <div class="main">
+            <div class="content">
+                <article class="passage">
+                    <h1 >{{detail['title']}}</h1>
+                    <h3>{{detail['name']}}</h3>
+                    <p class="body">{{detail['body']}}</p>
+                </article>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
