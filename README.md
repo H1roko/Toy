@@ -1,6 +1,6 @@
 # Toy
 
-平常写的一些有趣的小玩意。
+Here are some small projects that I have attempted to complete based on my interests.
 
 | 项目       | 描述                                                         |
 | ---------- | ------------------------------------------------------------ |
